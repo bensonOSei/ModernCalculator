@@ -1,0 +1,60 @@
+$mainColor: rgb(7, 82, 105);
+$color2: rgb(38, 190, 236);
+$color4: rgb(140, 212, 235);
+$color3: white;
+
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    background-color: $mainColor;
+    color: $color3;
+    padding: 20px;
+}
+
+main{
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.calc-box{
+    background-color: $color2;
+    padding: 20px;
+    width: 400px;
+
+    input{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0 10px 0;
+        border-radius: 5px;
+        border: none;
+
+    }
+
+    button{
+        border: none;
+        background-color: $mainColor;
+        color: $color3;
+        border-radius: 5px;
+        padding: 10px;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+
+        &:hover{
+            background-color: $color4;
+            color: $mainColor;
+        }
+    }
+}
