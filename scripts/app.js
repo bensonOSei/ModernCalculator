@@ -28,7 +28,7 @@ class Calculator {
 
   //choose operation type
   chooseOperation(operation) {
-    if (this.currentOperand === "") return; 
+    if (this.currentOperand === "") return;
     //stops the function when current operand is not set
 
     if (this.previousOperand !== "") {
@@ -145,24 +145,33 @@ operationButtons.forEach((button) => {
   button.addEventListener("click", () => {
     calculator.chooseOperation(button.innerText);
     calculator.updateDisplay();
-
   });
 });
 
 equalButton.addEventListener("click", (button) => {
-
   calculator.compute();
   calculator.updateDisplay();
 });
 
 allClearButton.addEventListener("click", (button) => {
-
   calculator.clear();
   calculator.updateDisplay();
 });
 
 deleteButton.addEventListener("click", (button) => {
-
   calculator.delete();
+  calculator.updateDisplay();
+});
+
+document.addEventListener("keypress", (event) => {
+  let number = event.key;
+  let integer_number = parseFloat(number);
+
+  while (isNaN(integer_number) && number !== ".") {
+    alert("Please type a number");
+    return;
+  }
+
+  calculator.appendNumber(number);
   calculator.updateDisplay();
 });
